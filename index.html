@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CES 2026 Deal Sprint - Tomorrow!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .content {
+            padding: 40px 30px;
+            color: #333;
+        }
+        
+        .tagline {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 3px solid #f5576c;
+        }
+        
+        .tagline h2 {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        
+        .tagline p {
+            color: #555;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+        
+        .what-is {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 6px solid #667eea;
+        }
+        
+        .what-is h3 {
+            color: #667eea;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+        
+        .what-is p {
+            color: #555;
+            font-size: 1.05em;
+            margin-bottom: 15px;
+        }
+        
+        .what-is .highlight {
+            background: #fef3c7;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 4px solid #fbbf24;
+        }
+        
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .benefit-card {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-card .icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .benefit-card h4 {
+            color: #333;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+        
+        .benefit-card p {
+            color: #555;
+            font-size: 0.9em;
+        }
+        
+        .timeline {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 2px solid #e5e7eb;
+        }
+        
+        .timeline h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: #f9fafb;
+            border-radius: 10px;
+        }
+        
+        .timeline-item .time {
+            background: #667eea;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            min-width: 100px;
+            text-align: center;
+            margin-right: 15px;
+        }
+        
+        .timeline-item .activity {
+            color: #555;
+            flex: 1;
+        }
+        
+        .prizes {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .prizes h3 {
+            color: #fff;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .prize-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .prize-item {
+            background: rgba(255,255,255,0.9);
+            padding: 20px;
+            border-radius: 12px;
+            min-width: 150px;
+        }
+        
+        .prize-item .place {
+            font-size: 2em;
+            font-weight: bold;
+            color: #764ba2;
+            margin-bottom: 8px;
+        }
+        
+        .prize-item .reward {
+            color: #333;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+        
+        .cta {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 40px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .cta h3 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .cta p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .cta .time {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 15px;
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚡ DEAL SPRINT ⚡</h1>
+            <div class="subtitle">CES 2026 Competition Challenge</div>
+        </div>
+        
+        <div class="content">
+            <div class="tagline">
+                <h2>This Is NOT Another Workshop!</h2>
+                <p>This is a high-stakes competition where YOU control your destiny 🎯</p>
+            </div>
+            
+            <div class="what-is">
+                <h3>🎮 What Is Deal Sprint?</h3>
+                <p><strong>You start with $10,000.</strong> Pitch to 7 real investors and buyers. Every decision earns or costs you money. The startup with the most cash at 3:30 PM wins.</p>
+                
+                <div class="highlight">
+                    <strong>🎯 Your Mission:</strong> Sell your startup. Make deals. Earn money. Beat everyone else.
+                </div>
+            </div>
+            
+            <div class="benefits">
+                <div class="benefit-card">
+                    <div class="icon">🎯</div>
+                    <h4>Real Practice</h4>
+                    <p>Pitch to 7 mentors with real industry experience as buyers</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="icon">🔥</div>
+                    <h4>Multiple Chances</h4>
+                    <p>Even if eliminated, you get comeback opportunities to win big</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="icon">🚀</div>
+                    <h4>Strategic Depth</h4>
+                    <p>Access "War Room" consulting to get expert strategy advice</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="icon">🤝</div>
+                    <h4>Real Connections</h4>
+                    <p>Build relationships with VCs, corporate buyers, and partners</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="icon">⚡</div>
+                    <h4>High Energy</h4>
+                    <p>Fast-paced, competitive, fun—totally different from workshops</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="icon">💼</div>
+                    <h4>CES Ready</h4>
+                    <p>Perfect your pitch before the real meetings at CES</p>
+                </div>
+            </div>
+            
+            <div class="timeline">
+                <h3>📅 Your Day Tomorrow</h3>
+                <div class="timeline-item">
+                    <div class="time">08:30</div>
+                    <div class="activity"><strong>Grab your $10K</strong> and get briefed on the rules</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">10:00</div>
+                    <div class="activity"><strong>Build your target list</strong> (earn +$1K for quality work)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">11:30</div>
+                    <div class="activity"><strong>The Auction</strong> - bid to meet your chosen mentor</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">12:15</div>
+                    <div class="activity"><strong>Gate 1:</strong> 10-min pitch (earn $3K if they're interested)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">12:50</div>
+                    <div class="activity"><strong>Lunch</strong> + count your cash, check the leaderboard 📊</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">13:50</div>
+                    <div class="activity"><strong>Gate 2:</strong> Deep dive (earn up to $8K)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">15:00</div>
+                    <div class="activity"><strong>Gate 3:</strong> Final negotiations (earn up to $15K!)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">15:30</div>
+                    <div class="activity"><strong>Winner announced</strong> + prizes awarded 🏆</div>
+                </div>
+            </div>
+            
+            <div class="prizes">
+                <h3>🚀 Why This Matters for CES</h3>
+                <div class="prize-list">
+                    <div class="prize-item">
+                        <div class="place">🎯</div>
+                        <div class="reward">Practice Your<br>Real CES Pitches</div>
+                    </div>
+                    <div class="prize-item">
+                        <div class="place">💡</div>
+                        <div class="reward">Learn What<br>Buyers Want</div>
+                    </div>
+                    <div class="prize-item">
+                        <div class="place">🤝</div>
+                        <div class="reward">Build Connections<br>Before CES</div>
+                    </div>
+                    <div class="prize-item">
+                        <div class="place">⚡</div>
+                        <div class="reward">Sharpen Your<br>Negotiation Skills</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta">
+                <h3>🎯 Get CES-Ready Tomorrow</h3>
+                <p>No more workshops. No more lectures.</p>
+                <p>Tomorrow you'll practice the real pitches, negotiations, and deals you need to crush it at CES.</p>
+                <p><strong>Are you ready?</strong></p>
+                <div class="time">⏰ 8:30 AM Sharp - Don't Miss Check-In!</div>
+            </div>
+            
+            <div class="footer">
+                <p><strong>Questions?</strong> Contact Kyle (yh@mvl.biz) or Jade (jc@mvl.biz)</p>
+                <p style="margin-top: 15px;">🚀 See you at 8:30 AM. Let's get CES-ready together. 🎯</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
